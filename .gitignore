@@ -1,0 +1,6 @@
+.obsidian/*
+!.obsidian/snippets/
+.DS_Store
+inbox/*.tmp
+.trash/
+private/

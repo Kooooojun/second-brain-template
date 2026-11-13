@@ -1,0 +1,43 @@
+/* 第二大腦卡片樣式：frontmatter 有 cssclasses: [sb-card] 的筆記才套用。
+   深藍字、黃色螢光筆。閱讀模式和編輯模式都要寫。 */
+.sb-card { --sb-hl: #ffe14d; --sb-hl-soft: rgba(255, 225, 77, .18); }
+.theme-dark .sb-card { --sb-hl: #b8940a; --sb-hl-soft: rgba(255, 214, 0, .10); }
+
+/* 卡片名稱：大字＋螢光筆 */
+.sb-card .inline-title {
+  display: inline-block; width: fit-content; max-width: 100%; font-size: 30px; font-weight: 800; line-height: 1.3;
+  background: linear-gradient(transparent 58%, var(--sb-hl) 58%, var(--sb-hl) 92%, transparent 92%);
+  padding: 0 4px; margin-bottom: .6em;
+}
+
+/* 屬性欄縮小、變淡，不搶內容；重複或看不懂的欄位藏起來 */
+.sb-card .metadata-container {
+  --metadata-label-font-size: 12px; --metadata-input-font-size: 12px;
+  --metadata-property-padding: 0 4px; --metadata-label-width: 6em;
+  opacity: .7; margin-bottom: 1.6em;
+}
+.sb-card .metadata-property { min-height: 0; }
+.sb-card .metadata-property[data-property-key="title"],
+.sb-card .metadata-property[data-property-key="tests"],
+.sb-card .metadata-property[data-property-key="cssclasses"] { display: none; }
+
+/* 段落標題（我的看法、什麼事會讓我改變想法…）當成小標籤 */
+.sb-card h2,
+.sb-card .HyperMD-header-2,
+.sb-card .HyperMD-header-2 .cm-header-2 {
+  font-size: 15px !important; font-weight: 700; color: var(--text-muted);
+  letter-spacing: .02em;
+}
+.sb-card h2 { margin: 2.2em 0 .7em; padding: 6px 10px; border-left: 4px solid var(--sb-hl); background: var(--sb-hl-soft); border-radius: 0 8px 8px 0; }
+.sb-card .HyperMD-header-2 {
+  margin-top: 1.6em; padding: 6px 10px !important; border-left: 4px solid var(--sb-hl);
+  background: var(--sb-hl-soft); border-radius: 0 8px 8px 0;
+}
+.sb-card .HyperMD-header-2 .cm-formatting-header { color: var(--sb-hl); }
+
+/* 內文：你的原話，放大好讀 */
+.sb-card .markdown-preview-view p,
+.sb-card .markdown-rendered p,
+.sb-card .cm-content .cm-line:not(.HyperMD-header) {
+  font-size: 18px; line-height: 1.8;
+}
